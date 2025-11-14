@@ -317,3 +317,467 @@ class Module04(ModuleBase):
     def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
         data[self.name] = {"note": "env-check", "ok": True}
         return data
+
+class Module05(ModuleBase):
+    def __init__(self):
+        super().__init__("module_05")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"adjust": RNG.uniform(-0.1, 0.1)}
+        return data
+
+
+class Module06(ModuleBase):
+    def __init__(self):
+        super().__init__("module_06")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"scale": RNG.randint(1, 10)}
+        return data
+
+
+class Module07(ModuleBase):
+    def __init__(self):
+        super().__init__("module_07")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"tag": f"t{RNG.randint(100,999)}"}
+        return data
+
+
+class Module08(ModuleBase):
+    def __init__(self):
+        super().__init__("module_08")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        x = data.get("inputs", [0])
+        data[self.name] = {"sum_inputs": sum(x) if isinstance(x, list) else 0}
+        return data
+
+
+class Module09(ModuleBase):
+    def __init__(self):
+        super().__init__("module_09")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"notes": ["ok", "checked"]}
+        return data
+
+
+class Module10(ModuleBase):
+    def __init__(self):
+        super().__init__("module_10")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"confidence": RNG.random()}
+        return data
+
+
+class Module11(ModuleBase):
+    def __init__(self):
+        super().__init__("module_11")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"count": sum(1 for k in data if k.startswith("module_"))}
+        return data
+
+
+class Module12(ModuleBase):
+    def __init__(self):
+        super().__init__("module_12")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"baseline": data.get("baseline", 0.01)}
+        return data
+
+
+class Module13(ModuleBase):
+    def __init__(self):
+        super().__init__("module_13")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"checksum": hash(tuple(sorted(data.keys()))) % 1000}
+        return data
+
+
+class Module14(ModuleBase):
+    def __init__(self):
+        super().__init__("module_14")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"valid": True}
+        return data
+
+
+class Module15(ModuleBase):
+    def __init__(self):
+        super().__init__("module_15")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"priority": RNG.choice(["low", "med", "high"])}
+        return data
+
+
+class Module16(ModuleBase):
+    def __init__(self):
+        super().__init__("module_16")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"delta": RNG.uniform(0, 0.05)}
+        return data
+
+
+class Module17(ModuleBase):
+    def __init__(self):
+        super().__init__("module_17")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"notes": "staged"}
+        return data
+
+
+class Module18(ModuleBase):
+    def __init__(self):
+        super().__init__("module_18")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"step": RNG.randint(1, 5)}
+        return data
+
+
+class Module19(ModuleBase):
+    def __init__(self):
+        super().__init__("module_19")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"cohort": RNG.randint(0, 100)}
+        return data
+
+
+class Module20(ModuleBase):
+    def __init__(self):
+        super().__init__("module_20")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"flagged": False}
+        return data
+
+
+class Module21(ModuleBase):
+    def __init__(self):
+        super().__init__("module_21")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"alpha": RNG.random()}
+        return data
+
+
+class Module22(ModuleBase):
+    def __init__(self):
+        super().__init__("module_22")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"beta": RNG.random()}
+        return data
+
+
+class Module23(ModuleBase):
+    def __init__(self):
+        super().__init__("module_23")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"gamma": RNG.choice([True, False])}
+        return data
+
+
+class Module24(ModuleBase):
+    def __init__(self):
+        super().__init__("module_24")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"note": "ok24"}
+        return data
+
+
+class Module25(ModuleBase):
+    def __init__(self):
+        super().__init__("module_25")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"value": RNG.randint(0, 500)}
+        return data
+
+
+class Module26(ModuleBase):
+    def __init__(self):
+        super().__init__("module_26")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"scale2": RNG.uniform(0.1, 2.0)}
+        return data
+
+
+class Module27(ModuleBase):
+    def __init__(self):
+        super().__init__("module_27")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"ok": True}
+        return data
+
+
+class Module28(ModuleBase):
+    def __init__(self):
+        super().__init__("module_28")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"percent": RNG.random()}
+        return data
+
+
+class Module29(ModuleBase):
+    def __init__(self):
+        super().__init__("module_29")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"tag2": "x"}
+        return data
+
+
+class Module30(ModuleBase):
+    def __init__(self):
+        super().__init__("module_30")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        # compose results from prior modules
+        data[self.name] = {"composed": True, "num_keys": len(data.keys())}
+        return data
+
+
+class Module31(ModuleBase):
+    def __init__(self):
+        super().__init__("module_31")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"summary_len": sum(len(str(v)) for v in data.values())}
+        return data
+
+
+class Module32(ModuleBase):
+    def __init__(self):
+        super().__init__("module_32")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"ok32": True}
+        return data
+
+
+class Module33(ModuleBase):
+    def __init__(self):
+        super().__init__("module_33")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"delta33": RNG.random() * 0.01}
+        return data
+
+
+class Module34(ModuleBase):
+    def __init__(self):
+        super().__init__("module_34")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"note34": "noop"}
+        return data
+
+
+class Module35(ModuleBase):
+    def __init__(self):
+        super().__init__("module_35")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"idx": RNG.randint(0, 10)}
+        return data
+
+
+class Module36(ModuleBase):
+    def __init__(self):
+        super().__init__("module_36")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"valid36": True}
+        return data
+
+
+class Module37(ModuleBase):
+    def __init__(self):
+        super().__init__("module_37")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"meta": {"created_by": "fake_engine"}}
+        return data
+
+
+class Module38(ModuleBase):
+    def __init__(self):
+        super().__init__("module_38")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"weight": RNG.uniform(0.0, 1.0)}
+        return data
+
+
+class Module39(ModuleBase):
+    def __init__(self):
+        super().__init__("module_39")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"step39": RNG.randint(1, 3)}
+        return data
+
+
+class Module40(ModuleBase):
+    def __init__(self):
+        super().__init__("module_40")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"note40": "done"}
+        return data
+
+
+class Module41(ModuleBase):
+    def __init__(self):
+        super().__init__("module_41")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"ok41": True}
+        return data
+
+
+class Module42(ModuleBase):
+    def __init__(self):
+        super().__init__("module_42")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"value42": RNG.random()}
+        return data
+
+
+class Module43(ModuleBase):
+    def __init__(self):
+        super().__init__("module_43")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"state": RNG.choice(["init", "run", "stop"])}
+        return data
+
+
+class Module44(ModuleBase):
+    def __init__(self):
+        super().__init__("module_44")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"idx44": RNG.randint(0, 44)}
+        return data
+
+
+class Module45(ModuleBase):
+    def __init__(self):
+        super().__init__("module_45")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"ok45": True}
+        return data
+
+
+class Module46(ModuleBase):
+    def __init__(self):
+        super().__init__("module_46")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"meta46": "x"}
+        return data
+
+
+class Module47(ModuleBase):
+    def __init__(self):
+        super().__init__("module_47")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"rnd47": RNG.random()}
+        return data
+
+
+class Module48(ModuleBase):
+    def __init__(self):
+        super().__init__("module_48")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"note48": None}
+        return data
+
+
+class Module49(ModuleBase):
+    def __init__(self):
+        super().__init__("module_49")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        data[self.name] = {"count49": RNG.randint(0, 100)}
+        return data
+
+
+class Module50(ModuleBase):
+    def __init__(self):
+        super().__init__("module_50")
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        # final aggregator
+        data[self.name] = {"aggregated_keys": len(data.keys())}
+        return data
+
+
+# Pipeline that wires modules together and runs them in sequence.
+class Pipeline:
+    def __init__(self, modules: List[ModuleBase]):
+        self.modules = modules
+
+    def run(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
+        data = {"inputs": inputs.get("values", []), "baseline": inputs.get("baseline", 0.01)}
+        for m in self.modules:
+            try:
+                data = m.process(data)
+            except Exception as e:
+                data[f"{m.name}_error"] = str(e)
+        return data
+
+
+# Simple CLI-style runner for demonstration
+def demo_run():
+    cfg = Config(population_size=2000, simulation_years=5, seed=123)
+    sc = Scenarios(cfg)
+    baseline_ivs = sc.baseline()
+    all_ivs = sc.all_interventions()
+    sim_baseline = SimulationRun(cfg, baseline_ivs, seed=1)
+    sim_with = SimulationRun(cfg, all_ivs, seed=2)
+    r1 = sim_baseline.run()
+    r2 = sim_with.run()
+    analyzer = Analyzer()
+    comparison = analyzer.compare_runs([r1, r2])
+    analyzer.pretty_print(comparison)
+
+    # Run pipeline
+    modules = [Module01(), Module02(), Module03(), Module04(), Module05(),
+               Module06(), Module07(), Module08(), Module09(), Module10(),
+               Module11(), Module12(), Module13(), Module14(), Module15(),
+               Module16(), Module17(), Module18(), Module19(), Module20(),
+               Module21(), Module22(), Module23(), Module24(), Module25(),
+               Module26(), Module27(), Module28(), Module29(), Module30(),
+               Module31(), Module32(), Module33(), Module34(), Module35(),
+               Module36(), Module37(), Module38(), Module39(), Module40(),
+               Module41(), Module42(), Module43(), Module44(), Module45(),
+               Module46(), Module47(), Module48(), Module49(), Module50()]
+    pipeline = Pipeline(modules)
+    pipeline_result = pipeline.run({"values": [1, 2, 3], "baseline": 0.02})
+    print("Pipeline result keys:", list(pipeline_result.keys())[:10], "...")
+
+if __name__ == "__main__":
+    demo_run()
